@@ -7,7 +7,7 @@
 <body>
 
     <h1>Student Course Enrollment System</h1>
-
+    <h1>This is another branch for conflict merge solving since It can only be merged in one branch</h1>
     <ul>
         <li><a href="students/index.php">Manage Students</a></li>
         <li><a href="courses/index.php">Manage Courses</a></li>
