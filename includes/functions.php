@@ -57,3 +57,32 @@ function addEnrollment($conn, $student_id, $course_id) {
 function deleteEnrollment($conn, $id) {
     return mysqli_query($conn, "DELETE FROM enrollments WHERE id = $id");
 }
+// TOTAL ENROLLMENTS, COURSES, STUDENTS
+function getTotalStudents($conn) {
+    $result = mysqli_query($conn, "SELECT COUNT(*) as total FROM students");
+    $row = mysqli_fetch_assoc($result);
+    return $row['total'];
+}
+
+function getTotalCourses($conn) {
+    $result = mysqli_query($conn, "SELECT COUNT(*) as total FROM courses");
+    $row = mysqli_fetch_assoc($result);
+    return $row['total'];
+}
+
+function getTotalEnrollments($conn) {
+    $result = mysqli_query($conn, "SELECT COUNT(*) as total FROM enrollments");
+    $row = mysqli_fetch_assoc($result);
+    return $row['total'];
+}
+
+function getRecentEnrollments($conn, $limit = 5) {
+    $sql = "SELECT enrollments.id, students.name AS student_name, 
+                   courses.name AS course_name, enrollments.created_at
+            FROM enrollments
+            JOIN students ON enrollments.student_id = students.id
+            JOIN courses ON enrollments.course_id = courses.id
+            ORDER BY enrollments.created_at DESC
+            LIMIT $limit";
+    return mysqli_query($conn, $sql);
+}
