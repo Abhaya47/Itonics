@@ -44,3 +44,6 @@ $data = json_decode($response, true);
     <p><strong>Body:</strong> <?= htmlspecialchars($data['body']) ?></p>
 </body>
 </html>
+
+
+<p>This paragraph is added to simulate git merge conflict on branch pranav-poudyal</p>
