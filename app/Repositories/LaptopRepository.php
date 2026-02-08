@@ -23,6 +23,8 @@ class LaptopRepository
         foreach ($possiblePaths as $path) {
             if (file_exists($path)) {
                 $this->filePath = $path;
+                //For debugging purposes, you can uncomment the line below to see which path is being used
+                echo "Using file path: $path\n";
                 return;
             }
         }
