@@ -17,6 +17,8 @@
     </ul>
     <h1>This is Tushar Luitel</h1>
     <h2>Next code by tushar luitel</h2>
+        <p> This is a sample paragraph</p>
+
 </body>
 </html>
 
